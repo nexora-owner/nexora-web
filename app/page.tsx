@@ -43,7 +43,7 @@ export default function Home() {
           </span>
 
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Enineering the Future
+            Engineering the Future
           </h1>
 
           <p className="mt-6 text-slate-400 max-w-2xl mx-auto">
