@@ -7,16 +7,18 @@ export default function Home() {
       {/* ================= HEADER ================= */}
       <header className="fixed top-0 w-full z-50 bg-[#0B1220]/80 backdrop-blur border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div className="flex items-center gap-1.5 font-semibold">
-       <Image
-        src="/logo.png"
-        alt="Nexora Systems Logo"
-        width={56}
-        height={56}
-        className="rounded-lg"
-      />
-       <span className="leading-none">Nexora Systems</span>
-      </div>
+
+          <a href="#hero" className="flex items-center gap-1.5 font-semibold">
+  <Image
+    src="/logo.png"
+    alt="Nexora Systems Logo"
+    width={56}
+    height={56}
+    className="rounded-lg"
+  />
+   <span className="leading-none">Nexora Systems</span>
+</a>
+     
 
           <nav className="hidden md:flex items-center gap-8 text-sm text-slate-300">
             <a href="#services" className="hover:text-white">Services</a>
@@ -32,7 +34,7 @@ export default function Home() {
       </header>
 
       {/* ================= HERO ================= */}
-      <section
+      <section id="hero"
         className="min-h-screen flex items-center justify-center px-6 pt-32
         bg-[radial-gradient(ellipse_at_top,_#1E3A8A_0%,_#0B1220_60%)]"
       >
