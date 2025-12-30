@@ -11,8 +11,8 @@ export default function Home() {
        <Image
         src="/logo.png"
         alt="Nexora Systems Logo"
-        width={52}
-        height={52}
+        width={56}
+        height={56}
         className="rounded-lg"
       />
        <span className="leading-none">Nexora Systems</span>
