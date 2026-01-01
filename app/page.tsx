@@ -1,25 +1,31 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+ const [open, setOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-[#0B1220] text-white scroll-smooth">
       
       {/* ================= HEADER ================= */}
-      <header className="fixed top-0 w-full z-50 bg-[#0B1220]/80 backdrop-blur border-b border-white/10">
+       <header className="fixed top-0 w-full z-50 bg-[#0B1220]/80 backdrop-blur border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
+          {/* Logo */}
           <a href="#hero" className="flex items-center gap-1.5 font-semibold">
-  <Image
-    src="/logo.png"
-    alt="Nexora Systems Logo"
-    width={56}
-    height={56}
-    className="rounded-lg"
-  />
-   <span className="leading-none">Nexora Systems</span>
-</a>
-     
+            <Image
+              src="/logo.png"
+              alt="Nexora Systems Logo"
+              width={48}
+              height={48}
+              className="rounded-lg"
+            />
+            <span className="leading-none">Nexora Systems</span>
+          </a>
 
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm text-slate-300">
             <a href="#services" className="hover:text-white">Services</a>
             <a href="#contact" className="hover:text-white">Contact</a>
@@ -30,7 +36,45 @@ export default function Home() {
               Get Started
             </a>
           </nav>
+
+          {/* Mobile Button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-2xl"
+            aria-label="Toggle menu"
+          >
+            {open ? "✕" : "☰"}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {open && (
+          <div className="md:hidden bg-[#0B1220] border-t border-white/10">
+            <nav className="flex flex-col px-6 py-6 gap-4 text-slate-300">
+              <a
+                href="#services"
+                onClick={() => setOpen(false)}
+                className="hover:text-white"
+              >
+                Services
+              </a>
+              <a
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="hover:text-white"
+              >
+                Contact
+              </a>
+              <a
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="mt-2 px-4 py-2 rounded-lg bg-teal-500 text-black font-medium text-center hover:bg-teal-400 transition"
+              >
+                Get Started
+              </a>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* ================= HERO ================= */}
